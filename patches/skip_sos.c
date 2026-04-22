@@ -24,6 +24,7 @@ RECOMP_PATCH void EnTest7_Update(Actor* thisx, PlayState* play) {
     // @recomp Allow skipping the Song of Soaring cutscene.
     Input* input = CONTROLLER1(&play->state);
     if (CHECK_BTN_ANY(input->press.button, BTN_A | BTN_B) && (OWL_WARP_CS_GET_OCARINA_MODE(&this->actor) != ENTEST7_ARRIVE)) {
-        func_80AF2350(thisx, play);
+		// should this be thisx or this?
+        func_80AF2350(this, play); // changed to this
     }
 }
